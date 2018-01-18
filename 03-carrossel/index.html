@@ -1,0 +1,45 @@
+<!--
+  Exemplo de aplicação de uma função de intervalo para geração de um banner
+  rotativo.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <style media="screen">
+      img{
+        display: none;
+      }
+
+      .ativa{
+        display: block;
+      }
+    </style>
+
+    <img src="gato-1.jpg" alt="" class="ativa">
+    <img src="doge-1.jpg" alt="">
+    <img src="lontra-1.jpg" alt="">
+    <img src="gato-2.jpg" alt="">
+
+    <script type="text/javascript">
+      let imgs = document.querySelectorAll('img');
+      let slider = 0;
+
+      function avancarSlide(){
+        imgs[slider].style.display = 'none';
+        slider++;
+
+        if(slider >= imgs.length){
+          slider = 0;
+        }
+
+        imgs[slider].style.display = 'block';
+      }
+
+      setInterval(avancarSlide, 2000);
+    </script>
+  </body>
+</html>
